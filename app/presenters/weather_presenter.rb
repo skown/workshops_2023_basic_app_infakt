@@ -25,8 +25,8 @@ class WeatherPresenter
         @icon = data['current']['condition']['icon']
     end
 
-    def display_weather
-        "Today's weather in Cracow is #{temperature}, #{description} #{encourage_text}"
+    def location
+        @location = data['location']['name']
     end
 
     private
