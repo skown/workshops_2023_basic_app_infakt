@@ -3,6 +3,9 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import "popper";
 import "bootstrap";
+import * as Popper from '@popperjs/core';
+
+window.Popper = Popper;
 
 document.addEventListener("turbo:load", function () {
   // This code is copied from Bootstrap's docs. See link below.
