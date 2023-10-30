@@ -1,4 +1,7 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
+require 'capybara/rspec'
+require 'support/chromedriver'
+require 'support/devise'
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
@@ -68,4 +71,18 @@ RSpec.configure do |config|
       with.library :rails
     end
   end
+
+  # OmniAuth.config.test_mode = true
+  # OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
+  #   provider: 'google_oauth2',
+  #   uid: '123545',
+  #   info: {
+  #     email: 'test@example.com',
+  #     name: 'Mock User'
+  #   },
+  #   credentials: {
+  #     token: 'mock_token',
+  #     expires_at: Time.now + 1.week
+  #   }
+  # })
 end
