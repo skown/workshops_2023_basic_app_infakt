@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :books
+  #resources :books
+  resources :books, except: [:show, :search] do
+    collection do
+      get 'search'
+    end
+  end
+  resources :books, only: [:show]
   resources :publishers
   resources :authors
   resources :categories
@@ -19,5 +25,4 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root 'books#index'
   get '/book-requests', to: 'book_requests#index', as: 'book_requests'
-  get '/books/search'
 end

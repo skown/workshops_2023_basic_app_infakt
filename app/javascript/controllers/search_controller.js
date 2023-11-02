@@ -6,6 +6,7 @@ export default class extends Controller {
   connect() {
     const value = this.paramsTarget.value
     
+    //console.log(value)
     fetch(`/books/search?search=${value}`, {
       headers: {
         "Content-Type": "application/json",
